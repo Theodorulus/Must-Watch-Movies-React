@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { appAuth } from '../firebase/firebaseconfig'
+// import { useLocation } from 'react-router-dom'
 
 const AuthContext = React.createContext()
 
@@ -10,6 +11,7 @@ export function useAuth() {
 export const AuthProvider = ({ children }) => {
     const [currentUser, setCurrentUser] = useState()
     const [loading, setLoading] = useState(true)
+    // const { pathname } = useLocation()
 
     function register(email, password) {
         return appAuth.createUserWithEmailAndPassword(email, password)
@@ -30,7 +32,7 @@ export const AuthProvider = ({ children }) => {
         })
 
         return unsubscribe
-    }, [])
+    }, []) //[pathname])
     
 
     const value = {
