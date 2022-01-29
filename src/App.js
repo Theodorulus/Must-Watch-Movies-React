@@ -7,6 +7,7 @@ import { Header } from "./components/Header"
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate} from 'react-router-dom'
 import { Watchlist } from "./components/movies/Watchlist"
+import { Watched } from "./components/movies/Watched"
 import { Button } from 'react-bootstrap'
 
 function App() {
@@ -35,6 +36,10 @@ function App() {
             <Route path="/" element={
               <PrivateRoute><Watchlist/></PrivateRoute>
             }/>
+
+            {/* <Route path="/watched" element={
+              <PrivateRoute><Watched/></PrivateRoute>
+            }/> */}
             <Route path="/register" element={<Register/>}/>
             <Route path="/login" element={<Login/>}/>
           </Routes>
