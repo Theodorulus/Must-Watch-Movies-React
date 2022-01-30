@@ -1,21 +1,18 @@
 import "firebase/compat/auth"
 import firebase from "firebase/compat/app"
-import { getDatabase } from "firebase/database"
 import "firebase/compat/firestore"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyC3blxDXIJrE1cd4XYpyolbCa9K9XNKwkY",
-  authDomain: "must-watch-movies-6c729.firebaseapp.com",
-  projectId: "must-watch-movies-6c729",
-  storageBucket: "must-watch-movies-6c729.appspot.com",
-  messagingSenderId: "301552211037",
-  appId: "1:301552211037:web:4868f126259992c7faa9b4",
-  measurementId: "G-NL0XX31EBY"
+  apiKey: "AIzaSyADu0r_L__EIHsMxbLgE-kXgDIcKziAk2Q",
+  authDomain: "react-must-watch.firebaseapp.com",
+  projectId: "react-must-watch",
+  storageBucket: "react-must-watch.appspot.com",
+  messagingSenderId: "611997508917",
+  appId: "1:611997508917:web:d7f17ec96b1a7187d9187c"
 };
 
 const app = firebase.initializeApp(firebaseConfig);
 export const appAuth = app.auth()
-export const db = getDatabase(app)
 export const firestore = app.firestore()
 
 export default app;

@@ -1,6 +1,5 @@
 import React from 'react';
-import { db, firestore } from './firebase/firebaseconfig'
-import { ref, set, onValue } from "firebase/database"
+import { firestore } from './firebase/firebaseconfig'
 import { doc, setDoc } from "firebase/firestore"
 
 export const AddMoviesToDbScript = () => {
@@ -30,7 +29,6 @@ export const AddMoviesToDbScript = () => {
     }
 
     async function addMovie(movieId, movieTitle, releaseYear, imageUrl, rating, movieDirector) {
-        // const movieRef = ref(db, 'movies/' + movieId)
         const movie = {
             id: movieId, 
             title: movieTitle,
@@ -39,7 +37,6 @@ export const AddMoviesToDbScript = () => {
             imDbRating: rating,
             director: movieDirector
         }
-        // set(movieRef, movie)
         await setDoc (doc(firestore, "movies", movieId), movie)
     }
 
