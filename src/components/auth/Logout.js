@@ -21,7 +21,7 @@ export const Logout = () => {
     
     return (
     <>
-        <div className='text-center text-light mt-2 '>
+        <div className='text-light mt-2 '>
             <Link to="/profile" className="text-decoration-none text-light">{currentUser.email}</Link>
             <Button variant="link" onClick={handleLogout} className="btn btn-secondary text-decoration-none text-light"> Logout </Button>
         </div>
