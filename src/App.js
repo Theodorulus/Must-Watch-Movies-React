@@ -2,6 +2,8 @@ import './App.css';
 import React from 'react';
 import { Register } from "./components/auth/Register"
 import { Login } from "./components/auth/Login"
+import { Profile } from "./components/auth/Profile"
+import { UpdateProfile } from "./components/auth/UpdateProfile"
 import { Header } from "./components/Header"
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom'
@@ -12,6 +14,7 @@ function App() {
 
   function PrivateRoute({children}) {
     const {currentUser} = useAuth()
+    console.log(currentUser)
     return currentUser? children : <Navigate to="/login"/>
   }
   
@@ -30,6 +33,12 @@ function App() {
             }/>
             <Route path="/register" element={<Register/>}/>
             <Route path="/login" element={<Login/>}/>
+            <Route path="/profile" element={
+              <PrivateRoute><Profile/></PrivateRoute>
+            }/>
+            <Route path="/update-profile" element={
+              <PrivateRoute><UpdateProfile/></PrivateRoute>
+            }/>
           </Routes>
       </Router>
     </AuthProvider>

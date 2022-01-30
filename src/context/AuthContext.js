@@ -23,6 +23,14 @@ export const AuthProvider = ({ children }) => {
         return appAuth.signOut()
     }
 
+    function updateEmail(email) {
+        return currentUser.updateEmail(email)
+    }
+
+    function updatePassword(password) {
+        return currentUser.updatePassword(password)
+    }
+
     useEffect(() => {
         const unsubscribe = appAuth.onAuthStateChanged(user => {
             setLoading(false)
@@ -37,7 +45,9 @@ export const AuthProvider = ({ children }) => {
         currentUser, 
         register,
         login,
-        logout
+        logout,
+        updateEmail,
+        updatePassword
     }
   
     return (

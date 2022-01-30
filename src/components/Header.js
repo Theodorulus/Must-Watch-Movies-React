@@ -7,6 +7,7 @@ export const Header = () => {
 
     function PrivateComponent({children}) {
         const {currentUser} = useAuth()
+        console.log(currentUser)
         return currentUser? children : null
     }
 

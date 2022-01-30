@@ -3,7 +3,7 @@ import { useAuth } from '../../context/AuthContext';
 import { Movie as MovieCard } from './Movie'
 import { AddMoviesToDbScript } from '../../AddMoviesToDbScript';
 import { firestore } from '../../firebase/firebaseconfig'
-import { collection, getDocs, query, where, DocumentData, getDoc, doc, setDoc } from 'firebase/firestore';
+import { collection, getDocs, query, where, doc, setDoc } from 'firebase/firestore';
 
 export const Watchlist = () => {
     const [watchList, setWatchList] = useState([])
@@ -67,11 +67,10 @@ export const Watchlist = () => {
 
         <div className="movie-grid">
         {watchList.map((movie) => (
-            <div className='movie-card'>
+            <div className='movie-card' key={movie.id + "div"}>
                 <button className="ctrl-btn" onClick={() => markMovieAsWatched(movie) } key={movie.id + "b"}>
                     <MovieCard movie={movie} key={movie.id}/>
                 </button>
-                
             </div>
         ))}
         </div>
