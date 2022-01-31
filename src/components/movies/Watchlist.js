@@ -4,6 +4,7 @@ import { Movie as MovieCard } from './Movie'
 import { AddMoviesToDbScript } from '../../AddMoviesToDbScript';
 import { firestore } from '../../firebase/firebaseconfig'
 import { collection, getDocs, query, where, doc, setDoc } from 'firebase/firestore';
+import { Button } from 'react-bootstrap'
 
 export const Watchlist = () => {
     const [watchList, setWatchList] = useState([])
@@ -68,9 +69,13 @@ export const Watchlist = () => {
         <div className="movie-grid">
         {watchList.map((movie) => (
             <div className='movie-card' key={movie.id + "div"}>
-                <button className="ctrl-btn" onClick={() => markMovieAsWatched(movie) } key={movie.id + "b"}>
-                    <MovieCard movie={movie} key={movie.id}/>
+                <a className="btn btn-warning w-100 mb-3" href={"https://www.imdb.com/title/" + movie.id}>
+                    IMDb
+                </a>
+                <button className="ctrl-btn poster" onClick={() => markMovieAsWatched(movie) } key={movie.id + "b"}>
+                    <MovieCard movie={movie} key={movie.id}/> 
                 </button>
+                
             </div>
         ))}
         </div>

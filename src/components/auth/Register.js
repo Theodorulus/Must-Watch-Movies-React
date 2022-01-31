@@ -50,7 +50,7 @@ export const Register = () => {
                       <Form.Label>Confirm Password</Form.Label>
                       <Form.Control type="password" ref={passwordConfirmRef} required/>
                   </Form.Group>
-                  <Button disabled={loading} className="w-100 mt-3" type="submit"> Sign Up</Button>
+                  <Button disabled={loading} className="w-100 mt-3 btn-warning" type="submit"> Sign Up</Button>
               </Form>
           </Card.Body>
         </Card>

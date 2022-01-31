@@ -43,6 +43,13 @@ body {
   box-sizing: border-box;
 }
 
+.poster:hover {
+  border: 3px solid #ffc107;
+  border-radius: 5px;
+  -webkit-filter: brightness(80%);
+}
+
+
 .btn {
   padding: 10px 15px;
   background-color: var(--secondary);
@@ -198,7 +205,8 @@ header .nav-links li:last-child {
 
 .count-pill {
   display: block;
-  background-color: var(--secondary);
+  /* background-color: var(--secondary); */
+  background-color: #ffc107;
   padding: 5px 15px;
   font-size: 1.125rem;
   font-weight: 600;
@@ -289,3 +297,4 @@ header .nav-links li:last-child {
   font-size: 3rem;
   text-align: center;
 }
+

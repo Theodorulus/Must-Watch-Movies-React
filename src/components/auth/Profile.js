@@ -15,7 +15,7 @@ export const Profile = () => {
                         <div className="text-center">
                             <strong>Email: </strong> {currentUser.email}
                         </div>
-                        <Link to="/update-profile" className="btn btn-primary w-100 mt-3">Update profile</Link>
+                        <Link to="/update-profile" className="btn btn-warning w-100 mt-3">Update profile</Link>
                         
                     </Card.Body>
                 </Card>

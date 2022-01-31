@@ -61,7 +61,10 @@ export const Watched = () => {
         <div className="movie-grid">
         {watchedMoviesList.map((movie) => (
             <div className='movie-card' key={movie.id + "div"}>
-                <button className="ctrl-btn" onClick={() => markMovieAsUnwatched(movie) } key={movie.id + "b"}>
+                <a className="btn btn-warning w-100 mb-3" href={"https://www.imdb.com/title/" + movie.id}>
+                    IMDb
+                </a>
+                <button className="ctrl-btn poster" onClick={() => markMovieAsUnwatched(movie) } key={movie.id + "b"}>
                     <MovieCard movie={movie} key={movie.id}/>
                 </button>
             </div>

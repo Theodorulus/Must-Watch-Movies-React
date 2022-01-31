@@ -60,7 +60,7 @@ export const UpdateProfile = () => {
                       <Form.Label>Confirm Password</Form.Label>
                       <Form.Control type="password" ref={passwordConfirmRef} placeholder="Leave empty to keep the same"/>
                   </Form.Group>
-                  <Button disabled={loading} className="w-100 mt-3" type="submit"> Update </Button>
+                  <Button disabled={loading} className="w-100 mt-3 btn-warning" type="submit"> Update </Button>
               </Form>
           </Card.Body>
         </Card>
