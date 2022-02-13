@@ -82,6 +82,9 @@ export const Watchlist = () => {
         
       </div>
     </div>
+    {/* <div> // -> This script has been ran once to populate the firebase database with the 100 movies
+        <AddMoviesToDbScript/>
+    </div> */}
     </>
   );
 };
